@@ -4,11 +4,11 @@ Welcome to UpStay, this repo contains a boilerplate for your UpStay exercise.
 
 ## Project aim
 
-In this project you will create a live feed hotels reservations web service.
+In this project you will create a web service, displaying a live feed of hotel reservations.
 
 You will be provided with a stream of reservations, which you should keep track of in the server and insert it to
-the database, after successfully inserted your will broadcast it to the client using web sockets.
-When a user opens the web-app, he should see the live feed for with all the reservations from the database:
+the database. After successful insertion, you should broadcast the new reservation to the client using web sockets.
+When a user opens the web-app, he should see the live feed of all reservations from the database:
 
 This is how it should look like:
 
@@ -26,7 +26,7 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 3. create .env file and put there your ConnectionString under `DATABASE_URL` key as shown in [.env.example](https://github.com/ancillary-streams/upstay-exercise-medium/blob/master/.env.example)
 
-4. Your all set! start the project using `npm install` and `npm start`. you will see a [web page](http://localhost:9999) opened with a beautiful "Welcome to UpStay" message :)
+4. You're all set! Start the project using `npm install` and `npm start`. you will see a [web page](http://localhost:9999) opened with a beautiful "Welcome to UpStay" message :)
 
 ## Instructions [Back-End]
 
@@ -44,16 +44,14 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 2. Activate the `filter input by uuid`: on every keystroke the feed should refresh to display any matches to the reservation's uuid. This filter should be dynamic client-side only.
 
-3. Activate the `select box change currency`: on page load and every `onChange` event, all the reservation prices should be converted to the new selected currency (you can assume default value is USD). Use your previously created currencies route to populate the ComboBox and make the conversion by their actual current values from your chosen external API. you should render the page only when all the data is ready.
+3. Activate the `select box change currency`: on every change all the reservation prices should be converted to the new selected currency (all reservations are in USD). Use your previously created currencies route to populate the ComboBox and make the conversion by their actual current values from your chosen external API.
 
-4. Subscribe your socket.io client to the corresponding event your chose in the server and listen to new reservation events. Add any new reservations to the live feed.
-
-5. use loading spinners/messages in the appropriate ajax loading places.
+4. Subscribe your socket.io client to the corresponding event your chose in the server שמג listen to new reservation events. Add any new reservations to the live feed.
 
 ## Notes
 
-1. To make your (and our :)) life easier, we already made a pretty solid code infrastructure for the Server and the Client. Before your begin coding, please take 10-15 minutes to evaluate the existing implementation and make sure you understand the project structure and design architecture.
-   If you have any questions before you start you can [reach out to us](mailto:adiel@upstay.tech) any time!
+1. To make your (and our :)) life easier, we already made a pretty solid code infrastructure for the Server and the Client. Before your begin coding, please take 10-15 minutes to evaluate the existing implementation and make sure you understand the project structure and design architecture. 
+If you have any questions before you start you can [reach out to us](mailto:adiel@upstay.tech) any time!
 
 2. Some of the libraries used in the project are not opinionative, please use them:
 
