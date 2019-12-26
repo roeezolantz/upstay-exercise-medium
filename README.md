@@ -1,6 +1,6 @@
 # Reservation Feed
 
-Welcome to UpStay, this repo contains a boilerplate for your UpStay exercise.
+Welcome to UpStay :dancer:, this repo contains a boilerplate for your UpStay exercise.
 
 ## Project aim
 
@@ -78,4 +78,4 @@ For better development experience with fully eslint and prettier IDE support
 
 7. Submit your solution by committing & pushing all your code and send us the forked repo URL.
 
-Good Luck! We hope you will learn a lot and also have fun :)
+Good Luck! We hope you will learn a lot and also have fun :slightly_smiling_face:
