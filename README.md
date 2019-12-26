@@ -61,12 +61,22 @@ The web app should be fully responsive and from small breakpoint down (`@media (
     -   [pg](https://node-postgres.com/) - Postgres Databse Client
     -   [socket.io](https://socket.io/) - Real Time engine based on web sockets
 
-If you are not familiar with those technologies please find the time to go through them and understand the basic use API. This is part of the test. Besides those, you may use any other tool you know and love for the job.
+    If you are not familiar with those technologies please find the time to go through them and understand the basic use API. This is part of the test. Besides those, you may use any other tool you know and love for the job.
 
--   In the Front-End, we are using a custom webpack config that supports all the new javascript goodies implementations. This setup support React & JSX (of course :stuck_out_tongue_closed_eyes:), hooks, css, scss (sass) and styled-components. You can add whatever tool or babel plugin your like if you need extra compile assets (no need to use create-react-app - everything is already working for you!).
+-   In the Front-End, we are using a custom `webpack` config that supports all the new javascript goodies implementations.  
+     This setup supports:
+
+    -   React & JSX (of course :stuck_out_tongue_closed_eyes:)
+    -   hooks
+    -   css
+    -   scss (sass)
+    -   styled-components.
+
+    You can add whatever tool or babel plugin your like if you need extra compile assets (no need to use create-react-app - everything is already working for you!).
+
     Dev server and hot reload are also in, so you can work on the same url in the client and the server (no need to complicate yourself with proxy for your ajax calls and other annoying stuff from CRA :dizzy_face:).
 
--   Please use any UI library you want (or css framework) to make our project more shiny.
+-   Please use any [UI](https://ant.design/docs/react/introduce) [library](https://react-bootstrap.github.io/) [you](https://material-ui.com/) [want](https://react.semantic-ui.com/) (or [any](https://purecss.io/) [css](https://getbootstrap.com/) [framework](https://foundation.zurb.com/)) to make our project more shiny.
 
 -   We look for clean and organized code. Keep it [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself)!
 
@@ -76,8 +86,9 @@ If you are not familiar with those technologies please find the time to go throu
     -   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
     -   [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
-For better development experience with fully eslint and prettier IDE support
+    For better development experience with fully eslint and prettier IDE support
 
 -   Submit your solution by committing & pushing all your code and send us the forked repo URL.
 
-Good Luck! We hope you will learn a lot and also have fun :wink::v:
+**Good Luck!**  
+We hope you will learn a lot and also have fun :wink::v:
