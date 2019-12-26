@@ -24,7 +24,7 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 2. Create a [Postgres](https://www.postgresql.org/) database using your favorite tools (we recommend [DataGrip IDE](https://www.jetbrains.com/datagrip/)) and execute the [ddl.sql](https://github.com/ancillary-streams/upstay-exercise-medium/blob/master/ddl.sql) provided in the project to generate your initial database structure.
 
-3. create .env file and put there your ConnectionString under `DATABASE_URL` key as shown in [.env.example](https://github.com/ancillary-streams/upstay-exercise-medium/blob/master/.env.example)
+3. create .env file and put there your Database Connection String in the format: `postgres://`_[USER]_`:`_[PASSWORD]_`@`_[HOST]_`:`_[PORT]_`/`_[DATABASE_NAME]_ under `DATABASE_URL` key as shown in [.env.example](https://github.com/ancillary-streams/upstay-exercise-medium/blob/master/.env.example)
 
 4. You're all set! Start the project using `npm install` and `npm start`. you will see a [web page](http://localhost:9999) opened with a beautiful "Welcome to UpStay" message :)
 
