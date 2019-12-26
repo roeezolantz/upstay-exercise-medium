@@ -1,6 +1,7 @@
 # Reservation Feed
 
-Welcome to UpStay :dancer:, this repo contains a boilerplate for your UpStay exercise.
+Welcome to UpStay! :dancer::dancer:  
+this repo contains a boilerplate for your UpStay exercise.
 
 ## Project aim
 
@@ -24,9 +25,9 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 2. Create a [Postgres](https://www.postgresql.org/) database using your favorite tools (we recommend [DataGrip IDE](https://www.jetbrains.com/datagrip/)) and execute the [ddl.sql](https://github.com/ancillary-streams/upstay-exercise-medium/blob/master/ddl.sql) provided in the project to generate your initial database structure.
 
-3. create .env file and put there your Database Connection String in the format: `postgres://`_[USER]_`:`_[PASSWORD]_`@`_[HOST]_`:`_[PORT]_`/`_[DATABASE_NAME]_ under `DATABASE_URL` key as shown in [.env.example](https://github.com/ancillary-streams/upstay-exercise-medium/blob/master/.env.example)
+3. create `.env` file and put there your Database Connection String in the format: `postgres://[USER]:[PASSWORD]@[HOST]:[PORT]/[DATABASE_NAME]` under `DATABASE_URL` key as shown in [.env.example](https://github.com/ancillary-streams/upstay-exercise-medium/blob/master/.env.example)
 
-4. You're all set! Start the project using `npm install` and `npm start`. you will see a [web page](http://localhost:9999) opened with a beautiful "Welcome to UpStay" message :)
+4. You're all set! Start the project using `npm install` and `npm start`. you will see a [web page](http://localhost:9999) opened with a beautiful "Welcome to UpStay" message :hugs:
 
 ## Instructions [Back-End]
 
@@ -50,32 +51,33 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 ## Notes
 
-1. To make your (and our :)) life easier, we already made a pretty solid code infrastructure for the Server and the Client. Before your begin coding, please take 10-15 minutes to evaluate the existing implementation and make sure you understand the project structure and design architecture.
-   If you have any questions before you start you can [reach out to us](mailto:adiel@upstay.tech) any time!
+-   To make your (and our :upside_down_face:) life easier, we already made a pretty solid code infrastructure for the Server and the Client. Before your begin coding, please take 10-15 minutes to evaluate the existing implementation and make sure you understand the project structure and design architecture.
+    If you have any questions before you start you can [reach out to us](mailto:adiel@upstay.tech) any time!
 
-2. Some of the libraries used in the project are not opinionative, please use them:
+-   Some of the libraries used in
+    the project are not opinionative, please use them:
 
--   [axios](https://github.com/axios/axios) - HTTP Client for Node & Browser
--   [pg](https://node-postgres.com/) - Postgres Databse Client
--   [socket.io](https://socket.io/) - Real Time engine based on web sockets
+    -   [axios](https://github.com/axios/axios) - HTTP Client for Node & Browser
+    -   [pg](https://node-postgres.com/) - Postgres Databse Client
+    -   [socket.io](https://socket.io/) - Real Time engine based on web sockets
 
 If you are not familiar with those technologies please find the time to go through them and understand the basic use API. This is part of the test. Besides those, you may use any other tool you know and love for the job.
 
-3. In the Front-End, we are using a custom webpack config that supports all the new javascript goodies implementations. This setup support React (of course :)), JSX, hooks, css, scss (sass) and styled-components. You can add whatever tool or babel plugin your like if you need extra compile assets (no need to use create-react-app - everything is already working for you!).
-   Dev server and hot reload are also implemented, so you can work on the same url in the client and the server (no need to complicate yourself with proxy for your ajax calls and other stuff).
+-   In the Front-End, we are using a custom webpack config that supports all the new javascript goodies implementations. This setup support React & JSX (of course :stuck_out_tongue_closed_eyes:), hooks, css, scss (sass) and styled-components. You can add whatever tool or babel plugin your like if you need extra compile assets (no need to use create-react-app - everything is already working for you!).
+    Dev server and hot reload are also in, so you can work on the same url in the client and the server (no need to complicate yourself with proxy for your ajax calls and other annoying stuff from CRA :dizzy_face:).
 
-4. Please use any UI library you want (or css framework) to make our project more shiny.
+-   Please use any UI library you want (or css framework) to make our project more shiny.
 
-5. We look for clean and organized code. Keep it DRY!
+-   We look for clean and organized code. Keep it [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself)!
 
-6. We recommend using [VSCode IDE](https://code.visualstudio.com/) with those extensions:
+-   We recommend using [VSCode IDE](https://code.visualstudio.com/) with those extensions:
 
--   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
--   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
--   [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+    -   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+    -   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+    -   [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
 For better development experience with fully eslint and prettier IDE support
 
-7. Submit your solution by committing & pushing all your code and send us the forked repo URL.
+-   Submit your solution by committing & pushing all your code and send us the forked repo URL.
 
-Good Luck! We hope you will learn a lot and also have fun :slightly_smiling_face:
+Good Luck! We hope you will learn a lot and also have fun :wink::v:
