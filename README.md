@@ -30,25 +30,28 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 ## Instructions [Back-End]
 
-1. Create a reservation route that return all the reservations from the database.
+1. Create a reservation route that returns all the reservations from the database.
 
-2. Use the code provided that attach the callback for listening to new reservation event from the generator stream, insert the new reservation to the database and broadcast it to the client using the socket provided from [socket.io](https://socket.io/) implementation. The broadcast to the client should occur only on successfully insertion!
+2. Use the code provided and attach a callback to new reservation events in the generator stream.
 
-3. Create a route that return all the currencies exchange rates using an external public API of your choice.
+3. Insert new reservations to the database and broadcast them to the client using the socket provided from [socket.io](https://socket.io/) implementation. The broadcast to the client should only occur on successfully insertion!
+
+4. Create a route that returns live exchange rates for currencies using an external public API of your choice.
 
 ## Instructions [Front-End]
 
-1. Create the feed page displaying all the reservations from the database on load of the application as describe in the preview mocks above. no need for pagination! all the data should be rendered endlessly to the page.
+1. Create the feed page displaying all the reservations from the database on application load, as describe in the preview mocks above. No need for pagination! All the data should be rendered endlessly onto the page.
 
-2. Activate the `filter input by uuid`: on every keystroke the feed should be refresh if there is any match with the reservation uuid, this filter is dynamic client side only!
+2. Activate the `filter input by uuid`: on every keystroke the feed should refresh to display any matches to the reservation's uuid. This filter should be dynamic client-side only.
 
-3. Activate the `select box change currency`: on every change all the reservation prices should be converted to the new selected currency. (all the reservation are USD in the database) Use your early created currencies route to populate the ComboBox and make the conversion by their actual current values from your chosen external API.
+3. Activate the `select box change currency`: on every change all the reservation prices should be converted to the new selected currency (all reservations are in USD). Use your previously created currencies route to populate the ComboBox and make the conversion by their actual current values from your chosen external API.
 
-4. Subscribe your socket.io client to the corresponding event your chose in the server to listen to the new reservation, use this reservation to update the live feed.
+4. Subscribe your socket.io client to the corresponding event your chose in the server שמג listen to new reservation events. Add any new reservations to the live feed.
 
 ## Notes
 
-1. To make your (and our :)) life more easy, we already make a pretty solid code infrastructure for the Server and the Client. Before your begin coding, please take 10-15 minutes to evaluate the exist implementation and understand the project structure and design architecture. if you have any questions before you start you can consult [Us](mailto:adiel@upstay.tech) any time!
+1. To make your (and our :)) life easier, we already made a pretty solid code infrastructure for the Server and the Client. Before your begin coding, please take 10-15 minutes to evaluate the existing implementation and make sure you understand the project structure and design architecture. 
+If you have any questions before you start you can [reach out to us](mailto:adiel@upstay.tech) any time!
 
 2. Some of the libraries used in the project are not opinionative, please use them:
 
@@ -56,15 +59,14 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 -   [pg](https://node-postgres.com/) - Postgres Databse Client
 -   [socket.io](https://socket.io/) - Real Time engine based on web sockets
 
-If you are not familiar with those technologies please find the time to go through them and understand the basic use API. this is part of the test.
-Other then that you can use any tool you know and love for the job.
+If you are not familiar with those technologies please find the time to go through them and understand the basic use API. This is part of the test. Besides those, you may use any other tool you know and love for the job.
 
-3. In the Front-End, we are using a custom webpack config that supports all the new goodies javascript implementations. this setup support React(of course :)), JSX, hooks, css, scss(sass) and styled-components, you can add whatever tool or babel plugin your like if you need extra compile assets. (no need to use create-react-app - everything is already working for you!)
-   Dev server and hot reload are also implemented in our express so you can work on the same url in the client and in the server (no need to complicate yourself with proxy for your ajax calls and other stuff)
+3. In the Front-End, we are using a custom webpack config that supports all the new javascript goodies implementations. This setup support React (of course :)), JSX, hooks, css, scss (sass) and styled-components. You can add whatever tool or babel plugin your like if you need extra compile assets (no need to use create-react-app - everything is already working for you!).
+   Dev server and hot reload are also implemented, so you can work on the same url in the client and the server (no need to complicate yourself with proxy for your ajax calls and other stuff).
 
 4. Please use any UI library you want (or css framework) to make our project more shiny.
 
-5. Extra points will be given for clean organized code. DRY!. We prefer your make less missions with robust code then the opposite.
+5. We look for clean and organized code. Keep it DRY!
 
 6. We recommend using [VSCode IDE](https://code.visualstudio.com/) with those extensions:
 
@@ -74,6 +76,6 @@ Other then that you can use any tool you know and love for the job.
 
 For better development experience with fully eslint and prettier IDE support
 
-7. Submit your solution by commit & push all your code and send us the forked URL.
+7. Submit your solution by committing & pushing all your code and send us the forked repo URL.
 
-Good Luck! Hope you will learn a lot and also have fun :)
+Good Luck! We hope you will learn a lot and also have fun :)
