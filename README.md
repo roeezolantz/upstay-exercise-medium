@@ -44,9 +44,11 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 2. Activate the `filter input by uuid`: on every keystroke the feed should refresh to display any matches to the reservation's uuid. This filter should be dynamic client-side only.
 
-3. Activate the `select box change currency`: on every change all the reservation prices should be converted to the new selected currency (all reservations are in USD). Use your previously created currencies route to populate the ComboBox and make the conversion by their actual current values from your chosen external API.
+3. Activate the `select box change currency`: on page load and every `onChange` event, all the reservation prices should be converted to the new selected currency (you can assume default value is USD). Use your previously created currencies route to populate the ComboBox and make the conversion by their actual current values from your chosen external API. you should render the page only when all the data is ready.
 
 4. Subscribe your socket.io client to the corresponding event your chose in the server and listen to new reservation events. Add any new reservations to the live feed.
+
+5. use loading spinners/messages in the appropriate ajax loading places.
 
 ## Notes
 
