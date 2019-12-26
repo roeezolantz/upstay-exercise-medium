@@ -46,7 +46,7 @@ The web app should be fully responsive and from small breakpoint down (`@media (
 
 3. Activate the `select box change currency`: on every change all the reservation prices should be converted to the new selected currency (all reservations are in USD). Use your previously created currencies route to populate the ComboBox and make the conversion by their actual current values from your chosen external API.
 
-4. Subscribe your socket.io client to the corresponding event your chose in the server שמג listen to new reservation events. Add any new reservations to the live feed.
+4. Subscribe your socket.io client to the corresponding event your chose in the server and listen to new reservation events. Add any new reservations to the live feed.
 
 ## Notes
 
