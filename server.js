@@ -3,7 +3,8 @@ import open from 'open';
 import routes from '@upstay/routes';
 import * as reservationsService from '@upstay/services/reservations';
 import serverDev from './server.dev';
-import serverIO from './server.io';
+// import serverIO from './server.io';
+import { addReservation } from './db/reservations'
 
 const app = express();
 const port = process.env.PORT || 9999;
@@ -17,10 +18,14 @@ app.use(routes);
 
 serverDev(app);
 
-// socket.io server
-const server = serverIO(app, socket => {
-	reservationsService.start(reservation => {});
+reservationsService.start(reservation => {
+	addReservation(reservation);
 });
+
+// socket.io server
+// const server = serverIO(app, socket => {
+// 	reservationsService.start(reservation => {});
+// });
 
 server.listen(port, () => {
 	console.log(`Server started ${appURL}`);
