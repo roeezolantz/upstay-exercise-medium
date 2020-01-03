@@ -50,7 +50,6 @@ reservationsService.start(async reservation => {
 	addReservation(reservation);
 	io.emit(NEW_RESERVATION_SOCKET, enrichedRes)
 });
-
 // socket.io server
 // const server = serverIO(app, socket => {
 // 	reservationsService.start(reservation => {});
