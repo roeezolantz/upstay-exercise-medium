@@ -12,3 +12,16 @@ export const addReservation = async reservation => {
         console.log(error);
     }
 }
+
+export const getAllReservations = async () => {
+    const TABLE_NAME = `public.reservations`
+    const GET_ALL_RESERVATIONS = `SELECT * FROM ${TABLE_NAME};`
+    let results;
+    try {
+        results = await query(GET_ALL_RESERVATIONS).rows;
+        console.log(results)
+        return results;
+    } catch (error) {
+        console.log(error);
+    }
+}
