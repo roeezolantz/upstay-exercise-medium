@@ -28,8 +28,8 @@ const App = () => {
 			<Grid container
 				justify="center"
 				alignItems="center">
-				<Welcome>Welcome to</Welcome>
 				<SVGUpsay />
+				<Welcome>Reservations</Welcome>
 			</Grid>
 			<Grid item xs={12}>
 				<ReservationsList listData={reservations} />

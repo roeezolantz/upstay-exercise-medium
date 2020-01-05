@@ -8,6 +8,9 @@ const useStyles = makeStyles({
     card: {
         minWidth: 275,
     },
+    container: {
+
+    }
 });
 
 const ReservationsList = (props) => {
@@ -40,11 +43,13 @@ const ReservationsList = (props) => {
                 }}
                 onChange={e => setFilter(e.target.value)}
             />
-            {
-                listData
-                    .filter(curr => curr.uuid.includes(filter))
-                    .map(curr => <ReservationCard key={curr.uuid} reservationData={curr} />)
-            }
+            <div className={classes.container}>
+                {
+                    listData
+                        .filter(curr => curr.uuid.includes(filter))
+                        .map(curr => <ReservationCard key={curr.uuid} reservationData={curr} />)
+                }
+            </div>
         </Grid>
     );
 }
