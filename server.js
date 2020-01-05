@@ -1,13 +1,13 @@
 import express from 'express';
 import open from 'open';
+import http from 'http';
+import socketIO from 'socket.io';
 import routes from '@upstay/routes';
 import * as reservationsService from '@upstay/services/reservations';
 import serverDev from './server.dev';
 // import serverIO from './server.io';
-import { addReservation } from './db/reservations'
+import { addReservation, getHotelById } from './db'
 import { NEW_RESERVATION_SOCKET } from './protocols/reservations'
-import http from 'http';
-import socketIO from 'socket.io';
 
 const app = express();
 const port = process.env.PORT || 9999;
@@ -38,11 +38,18 @@ io.on('connection', (client) => {
 	});
 });
 
-reservationsService.start(reservation => {
-	addReservation(reservation);
-	io.emit(NEW_RESERVATION_SOCKET, reservation)
-});
+reservationsService.start(async reservation => {
+	const hotel_name = await getHotelById(reservation.hotel_id)
+	const enrichedRes = {
+		...reservation,
+		hotel_name
+	}
 
+	console.log("Sending ", enrichedRes)
+
+	addReservation(reservation);
+	io.emit(NEW_RESERVATION_SOCKET, enrichedRes)
+});
 // socket.io server
 // const server = serverIO(app, socket => {
 // 	reservationsService.start(reservation => {});
