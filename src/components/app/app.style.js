@@ -10,4 +10,5 @@ export const Container = styled.div`
 
 export const Welcome = styled.h1`
 	margin-right: 5px;
+	margin-left: 10px;
 `;
