@@ -1,3 +1,19 @@
+# API Endpoints
+
+`/api/currencies` - Returns a list of all the available currencies in the database
+
+`/api/reservations` - Returns a list of all the available reservations in the databse
+
+`/api/currencies/exchangeRates?from=USD&to=EUR` - Returns the convertion rate from the given currency `from` to the wanted one `to` 
+```json
+{
+    "base":"USD",
+    "to":"EUR",
+    "value":0.8933357156
+}
+```
+
+
 # Reservation Feed
 
 Welcome to UpStay! :dancer::dancer:  
