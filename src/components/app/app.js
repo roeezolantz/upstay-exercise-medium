@@ -11,7 +11,7 @@ import CurrencySwitcher from '../CurrencySwitcher'
 const useStyles = makeStyles({
 	helloContainer: {
 		display: 'flex',
-		alignItems: 'baseline',
+		alignItems: 'center',
 	},
 	smallSwitcher: {
 		display: 'flex',

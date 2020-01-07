@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, TextField, IconButton, InputAdornment } from '@material-ui/core';
+import { Grid, TextField, IconButton, InputAdornment, Typography } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import ReservationCard from '../ReservationCard'
 
@@ -36,7 +36,7 @@ const ReservationsList = (props) => {
                         listData
                             .filter(curr => curr.uuid.includes(filter))
                             .map(curr => <ReservationCard key={curr.uuid} reservationData={curr} />)
-                    ) : "There are no reservation right now, come back later.."
+                    ) : <Typography variant="h6" style={{ marginTop: '30px' }}>There are no reservation right now, come back later..</Typography>
                 }
             </div>
         </Grid>
