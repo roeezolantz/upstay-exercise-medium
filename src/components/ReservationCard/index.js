@@ -42,22 +42,18 @@ const useStyles = makeStyles({
     iconContainer: {
         alignSelf: 'center',
         marginRight: '10px'
-    }
+    },
 });
 
 const ReservationCard = (props) => {
     const classes = useStyles();
-    const { reservationData: { uuid, arrival_date, hotel_name, room_name, nights } } = props
+    const { reservationData: { uuid, arrival_date, hotel_name, room_name, nights, price, currency } } = props
     const [hovered, setHovered] = React.useState(false)
 
     const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const formatDate = str => new Date(str).toLocaleDateString("en-US", dateOptions)
     const dayLengthInMS = 86400000;
     const addDays = (date, numOfDays) => new Date(date.getTime() + (dayLengthInMS * numOfDays))
-
-    React.useEffect(() => {
-        console.log("The hotel name is : ", hotel_name)
-    }, [])
 
     return (
         <Card className={clsx(classes.card, { [classes.hoveredCard]: hovered })}
@@ -80,42 +76,47 @@ const ReservationCard = (props) => {
 
                         return (
                             <div className={container}>
-                                <div style={{ marginBottom: '10px' }}>
-                                    <div className={size}>
-                                        <div className={classes.iconContainer}>
-                                            <PinDropIcon />
+                                <div style={{ marginBottom: '10px', display: 'flex', justifyContent: 'space-between' }}>
+                                    <div>
+                                        <div className={size}>
+                                            <div className={classes.iconContainer}>
+                                                <PinDropIcon />
+                                            </div>
+                                            <div>
+                                                <Typography variant="subtitle1" className={classes.title}> Check-In </Typography>
+                                                <Typography variant="subtitle1"> {formatDate(arrival_date)} </Typography>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <Typography variant="subtitle1" className={classes.title}> Check-In </Typography>
-                                            <Typography variant="subtitle1"> {formatDate(arrival_date)} </Typography>
+                                        <div className={size}>
+                                            <div className={classes.iconContainer}>
+                                                <FlightTakeoffIcon />
+                                            </div>
+                                            <div>
+                                                <Typography variant="subtitle1" className={classes.title}> Check-Out </Typography>
+                                                <Typography variant="subtitle1"> {formatDate(addDays(new Date(arrival_date), nights))} </Typography>
+                                            </div>
+                                        </div>
+                                        <div className={size}>
+                                            <div className={classes.iconContainer}>
+                                                <DomainIcon />
+                                            </div>
+                                            <div>
+                                                <Typography variant="subtitle1" className={classes.title}> Hotel </Typography>
+                                                <Typography variant="subtitle1"> {hotel_name} </Typography>
+                                            </div>
+                                        </div>
+                                        <div className={size}>
+                                            <div className={classes.iconContainer}>
+                                                <LocalHotelIcon />
+                                            </div>
+                                            <div>
+                                                <Typography variant="subtitle1" className={classes.title}> Room Type </Typography>
+                                                <Typography variant="subtitle1"> {room_name} </Typography>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={size}>
-                                        <div className={classes.iconContainer}>
-                                            <FlightTakeoffIcon />
-                                        </div>
-                                        <div>
-                                            <Typography variant="subtitle1" className={classes.title}> Check-Out </Typography>
-                                            <Typography variant="subtitle1"> {formatDate(addDays(new Date(arrival_date), nights))} </Typography>
-                                        </div>
-                                    </div>
-                                    <div className={size}>
-                                        <div className={classes.iconContainer}>
-                                            <DomainIcon />
-                                        </div>
-                                        <div>
-                                            <Typography variant="subtitle1" className={classes.title}> Hotel </Typography>
-                                            <Typography variant="subtitle1"> {hotel_name} </Typography>
-                                        </div>
-                                    </div>
-                                    <div className={size}>
-                                        <div className={classes.iconContainer}>
-                                            <LocalHotelIcon />
-                                        </div>
-                                        <div>
-                                            <Typography variant="subtitle1" className={classes.title}> Room Type </Typography>
-                                            <Typography variant="subtitle1"> {room_name} </Typography>
-                                        </div>
+                                    <div>
+                                        <Typography variant="body2" className={classes.title}> {price} {currency}</Typography>
                                     </div>
                                 </div>
                                 <div className={size}>

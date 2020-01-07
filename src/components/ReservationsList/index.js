@@ -1,25 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, Grid, TextField, IconButton, InputAdornment } from '@material-ui/core';
-import ReservationCard from '../ReservationCard'
+import { Grid, TextField, IconButton, InputAdornment } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-
-const useStyles = makeStyles({
-    card: {
-        minWidth: 275,
-    },
-    container: {
-
-    }
-});
+import ReservationCard from '../ReservationCard'
 
 const ReservationsList = (props) => {
     const [filter, setFilter] = React.useState('')
-    const classes = useStyles();
     const { listData } = props
-    console.log(classes);
-
-    React.useEffect(() => console.log("filter changed : ", filter), [filter])
 
     return (
         <Grid
@@ -43,11 +30,13 @@ const ReservationsList = (props) => {
                 }}
                 onChange={e => setFilter(e.target.value)}
             />
-            <div className={classes.container}>
+            <div>
                 {
-                    listData
-                        .filter(curr => curr.uuid.includes(filter))
-                        .map(curr => <ReservationCard key={curr.uuid} reservationData={curr} />)
+                    listData && listData.length > 0 ? (
+                        listData
+                            .filter(curr => curr.uuid.includes(filter))
+                            .map(curr => <ReservationCard key={curr.uuid} reservationData={curr} />)
+                    ) : "There are no reservation right now, come back later.."
                 }
             </div>
         </Grid>
@@ -66,8 +55,8 @@ ReservationsList.propTypes = {
             arrival_date: PropTypes.string,
             nights: PropTypes.number,
             hotel_name: PropTypes.string,
-        })
-    ),
+        }).isRequired
+    ).isRequired,
 };
 
 export default ReservationsList;

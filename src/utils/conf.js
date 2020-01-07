@@ -1,0 +1,1 @@
+export const SERVER_ADDRESS = process.env.SERVER_ADDRESS && process.env.PORT ? `${process.env.SERVER_ADDRESS}:${process.env.PORT}` : 'http://localhost:9999'

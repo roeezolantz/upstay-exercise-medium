@@ -7,7 +7,12 @@ export const addReservation = async reservation => {
 
     if (reservation) {
         try {
-            let { rowCount } = await query(INSERT, Object.values(reservation));
+            const validated = {
+                ...reservation,
+                currency: reservation.currency.toLowerCase()
+            }
+
+            let { rowCount } = await query(INSERT, Object.values(validated));
             return rowCount == 1;
         } catch (error) {
             console.log(error);

@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllReservations } from '../../../db/reservations'
+import { getAllReservations } from '../../../db/index'
 
 const router = express.Router();
 
